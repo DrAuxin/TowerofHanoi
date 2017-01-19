@@ -9,6 +9,12 @@ public class Main {
             Scanner user = new Scanner(System.in);
             System.out.println("Enter the number of discs in your tower of Hanoi");
             int n = user.nextInt();
+            if (n <= 1)
+            {
+                String error = "This is not a tower of Hanoi";
+                IllegalArgumentException e = new IllegalArgumentException(error);
+                throw e;
+            }
             int source = 1;
             int spare = 2;
             int target = 3;
